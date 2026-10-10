@@ -17,7 +17,7 @@ export default function About() {
     {
       icon: Heart,
       title: "Designed for Every Body",
-      desc: "Flattering cuts ranging from Small to 3XL with generous seam margins for effortless comfort."
+      desc: "Flattering cuts ranging from Medium to 2XL with generous seam margins for effortless comfort."
     },
     {
       icon: ShieldCheck,
@@ -37,7 +37,7 @@ export default function About() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 text-[#6B1D2F] font-semibold text-xs uppercase tracking-widest bg-[#6B1D2F]/10 px-4 py-1.5 rounded-full mb-3 border border-[#6B1D2F]/20">
             <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
-            <span>Our Brand Story</span>
+            <span>Our Story &bull; Where Elegance Blooms</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#4A101D] mb-4">
             Celebrating Grace, Affordability & Tradition

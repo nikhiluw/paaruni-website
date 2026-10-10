@@ -54,7 +54,7 @@ export const products = [
     length: "long",
     price: 699,
     mrp: 1299,
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    sizes: ["M", "L", "XL", "XXL"],
     colors: [
       { name: "Royal Maroon", hex: "#7A1C30" },
       { name: "Deep Navy", hex: "#1B2A47" }
@@ -98,7 +98,7 @@ export const products = [
     length: "long",
     price: 799,
     mrp: 1499,
-    sizes: ["S", "M", "L", "XL"],
+    sizes: ["M", "L", "XL", "XXL"],
     colors: [
       { name: "Blush Pink", hex: "#E8A598" },
       { name: "Mint Sage", hex: "#8CA897" }
@@ -120,7 +120,7 @@ export const products = [
     length: "long",
     price: 649,
     mrp: 1199,
-    sizes: ["M", "L", "XL", "XXL", "3XL"],
+    sizes: ["M", "L", "XL", "XXL"],
     colors: [
       { name: "Rust Red", hex: "#9E382A" },
       { name: "Black Gold", hex: "#262421" }
@@ -144,7 +144,7 @@ export const products = [
     length: "short",
     price: 399,
     mrp: 799,
-    sizes: ["S", "M", "L", "XL"],
+    sizes: ["M", "L", "XL", "XXL"],
     colors: [
       { name: "Indigo Blue", hex: "#1A365D" },
       { name: "Earthy Brown", hex: "#654321" }
@@ -166,7 +166,7 @@ export const products = [
     length: "short",
     price: 449,
     mrp: 849,
-    sizes: ["S", "M", "L", "XL"],
+    sizes: ["M", "L", "XL", "XXL"],
     colors: [
       { name: "Mustard Yellow", hex: "#E5A93B" },
       { name: "Coral Peach", hex: "#F28482" }
@@ -188,7 +188,7 @@ export const products = [
     length: "short",
     price: 499,
     mrp: 899,
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    sizes: ["M", "L", "XL", "XXL"],
     colors: [
       { name: "Pure White", hex: "#FFFFFF" },
       { name: "Powder Blue", hex: "#B0E0E6" }
@@ -210,7 +210,7 @@ export const products = [
     length: "short",
     price: 429,
     mrp: 749,
-    sizes: ["M", "L", "XL"],
+    sizes: ["M", "L", "XL", "XXL"],
     colors: [
       { name: "Crimson Red", hex: "#990000" },
       { name: "Emerald Green", hex: "#004B23" }
@@ -234,7 +234,7 @@ export const products = [
     length: "long",
     price: 899,
     mrp: 1699,
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    sizes: ["M", "L", "XL", "XXL"],
     colors: [
       { name: "Wine Maroon", hex: "#58111A" },
       { name: "Bottle Green", hex: "#093C29" }
@@ -278,7 +278,7 @@ export const products = [
     length: "long",
     price: 799,
     mrp: 1499,
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    sizes: ["M", "L", "XL", "XXL"],
     colors: [
       { name: "Royal Blue", hex: "#002366" },
       { name: "Plum Purple", hex: "#4A0E4E" }
@@ -302,7 +302,7 @@ export const products = [
     length: "long",
     price: 849,
     mrp: 1599,
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    sizes: ["M", "L", "XL", "XXL"],
     colors: [
       { name: "Dusty Pink", hex: "#D8A7B1" },
       { name: "Aqua Teal", hex: "#5C9EAD" }
@@ -346,7 +346,7 @@ export const products = [
     length: "short",
     price: 799,
     mrp: 1399,
-    sizes: ["S", "M", "L", "XL"],
+    sizes: ["M", "L", "XL"],
     colors: [
       { name: "Marigold Yellow", hex: "#F3A712" },
       { name: "Magenta Pink", hex: "#D10069" }
@@ -392,7 +392,7 @@ export const products = [
     length: "long",
     price: 1199,
     mrp: 2299,
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    sizes: ["M", "L", "XL", "XXL"],
     colors: [
       { name: "Deep Maroon", hex: "#6B1D2F" },
       { name: "Emerald Green", hex: "#0A5C36" }
@@ -414,7 +414,7 @@ export const products = [
     length: "long",
     price: 1099,
     mrp: 1999,
-    sizes: ["M", "L", "XL", "XXL", "3XL"],
+    sizes: ["M", "L", "XL", "XXL"],
     colors: [
       { name: "Indigo Blue", hex: "#1F3B68" },
       { name: "Brick Red", hex: "#8A2323" }
@@ -436,7 +436,7 @@ export const products = [
     length: "long",
     price: 1299,
     mrp: 2499,
-    sizes: ["S", "M", "L", "XL"],
+    sizes: ["M", "L", "XL"],
     colors: [
       { name: "Mustard Gold", hex: "#D4AF37" },
       { name: "Rani Pink", hex: "#C71585" }

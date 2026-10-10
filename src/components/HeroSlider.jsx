@@ -10,7 +10,7 @@ export default function HeroSlider() {
       id: 1,
       image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1600&auto=format&fit=crop",
       badge: "Festive Collection 2026",
-      title: "Budget-Friendly Ethnic Elegance",
+      title: "Where Elegance Blooms",
       subtitle: "Discover handcrafted Long Kurtis, 2-Piece Co-ords & 3-Piece Festive Suits crafted for every Indian woman.",
       priceTag: "Kurtis starting from ₹399",
       cta: "Explore Categories",
@@ -75,10 +75,15 @@ export default function HeroSlider() {
             {/* Overlay Content */}
             <div className="relative z-10 max-w-7xl mx-auto h-full px-6 sm:px-12 lg:px-16 flex flex-col justify-center text-left">
               <div className="max-w-2xl space-y-4 sm:space-y-6">
-                {/* Badge */}
-                <div className="inline-flex items-center gap-2 bg-[#D4AF37]/20 border border-[#D4AF37]/50 text-[#F3DF8A] text-xs sm:text-sm font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full backdrop-blur-sm">
-                  <Sparkles className="w-4 h-4 text-[#D4AF37]" />
-                  <span>{slide.badge}</span>
+                {/* Brand Tagline & Badge */}
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <div className="inline-flex items-center gap-2 bg-[#D4AF37]/20 border border-[#D4AF37]/50 text-[#F3DF8A] text-xs sm:text-sm font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full backdrop-blur-sm">
+                    <Sparkles className="w-4 h-4 text-[#D4AF37]" />
+                    <span>{slide.badge}</span>
+                  </div>
+                  <span className="font-serif italic text-[#F3DF8A] text-xs sm:text-sm tracking-wider bg-black/40 px-3.5 py-1 rounded-full border border-white/10 backdrop-blur-sm hidden sm:inline-flex items-center">
+                    Where elegance blooms
+                  </span>
                 </div>
 
                 {/* Title */}
@@ -125,7 +130,7 @@ export default function HeroSlider() {
           </div>
           <div className="flex items-center justify-center gap-2">
             <Sparkles className="w-4 h-4 text-[#D4AF37]" />
-            <span>Sizes S to 3XL Available</span>
+            <span>Sizes M to 2XL Available</span>
           </div>
           <div className="flex items-center justify-center gap-2">
             <ArrowRight className="w-4 h-4 text-[#D4AF37]" />

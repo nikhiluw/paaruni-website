@@ -34,12 +34,17 @@ export default function Footer() {
               <div className="w-10 h-10 rounded-full bg-[#800020] flex items-center justify-center text-[#D4AF37] font-serif text-xl font-bold border border-[#D4AF37]/40 shadow-inner">
                 P
               </div>
-              <span className="font-serif text-2xl font-extrabold tracking-wider text-white">
-                PAARUNI
-              </span>
+              <div className="flex flex-col">
+                <span className="font-serif text-2xl font-extrabold tracking-wider text-white leading-none">
+                  PAARUNI
+                </span>
+                <span className="text-[11px] font-serif italic text-[#D4AF37] tracking-wider mt-1">
+                  Where elegance blooms
+                </span>
+              </div>
             </div>
             <p className="text-stone-300 text-sm font-light leading-relaxed max-w-sm">
-              Paaruni is your destination for budget-friendly women's ethnic wear. From daily casual kurtis to festive 3-piece ensembles, we celebrate affordable elegance.
+              <em className="text-[#F3DF8A] not-italic font-serif italic">Where elegance blooms.</em> Paaruni is your destination for budget-friendly women's ethnic wear—from daily casual kurtis to festive 3-piece ensembles.
             </p>
             <div className="inline-flex items-center gap-2 text-[#D4AF37] text-xs font-semibold bg-[#800020] px-3.5 py-1.5 rounded-full border border-[#D4AF37]/30">
               <ShieldCheck className="w-4 h-4" />

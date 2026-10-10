@@ -76,8 +76,8 @@ export default function Navbar() {
               <span className="font-serif text-2xl sm:text-3xl font-extrabold tracking-wider text-[#800020] group-hover:text-[#6B1D2F] transition-colors leading-none">
                 PAARUNI
               </span>
-              <span className="text-[10px] tracking-[0.25em] text-[#D4AF37] font-semibold uppercase mt-0.5">
-                Ethnic Elegance
+              <span className="text-[9px] sm:text-[10px] tracking-[0.2em] text-[#D4AF37] font-medium font-serif italic mt-0.5">
+                Where elegance blooms
               </span>
             </div>
           </Link>
