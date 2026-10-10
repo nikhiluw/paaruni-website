@@ -47,6 +47,7 @@ export default function HeroSlider() {
       <Swiper
         modules={[Autoplay, Pagination, Navigation, EffectFade]}
         effect="fade"
+        fadeEffect={{ crossFade: true }}
         speed={1000}
         autoplay={{
           delay: 5000,
@@ -77,12 +78,13 @@ export default function HeroSlider() {
               <div className="max-w-2xl space-y-4 sm:space-y-6">
                 {/* Brand Tagline & Badge */}
                 <div className="flex flex-wrap items-center gap-2.5">
-                  <div className="inline-flex items-center gap-2 bg-[#D4AF37]/20 border border-[#D4AF37]/50 text-[#F3DF8A] text-xs sm:text-sm font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full backdrop-blur-sm">
-                    <Sparkles className="w-4 h-4 text-[#D4AF37]" />
+                  <div className="inline-flex items-center gap-2 bg-[#D4A96A]/25 border border-[#D4A96A]/60 text-[#F2E6DE] text-xs sm:text-sm font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full backdrop-blur-sm">
+                    <Sparkles className="w-4 h-4 text-[#D4A96A]" />
                     <span>{slide.badge}</span>
                   </div>
-                  <span className="font-serif italic text-[#F3DF8A] text-xs sm:text-sm tracking-wider bg-black/40 px-3.5 py-1 rounded-full border border-white/10 backdrop-blur-sm hidden sm:inline-flex items-center">
-                    Where elegance blooms
+                  <span className="font-serif italic text-[#F2E6DE] text-xs sm:text-sm tracking-wider bg-black/45 px-3.5 py-1.5 rounded-full border border-[#D4A96A]/40 backdrop-blur-sm inline-flex items-center gap-2">
+                    <img src="/images/Flower.png" alt="Flower motif" className="w-4 h-4 object-contain inline-block" />
+                    <span>Where elegance blooms</span>
                   </span>
                 </div>
 
@@ -100,13 +102,13 @@ export default function HeroSlider() {
                 <div className="pt-2 flex flex-wrap items-center gap-4">
                   <button
                     onClick={handleScrollToProducts}
-                    className="inline-flex items-center gap-3 bg-[#D4AF37] hover:bg-[#c59b27] text-[#4A101D] font-bold text-sm sm:text-base px-7 py-3.5 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
+                    className="inline-flex items-center gap-3 bg-[#D4A96A] hover:bg-[#c59858] text-[#4A101D] font-bold text-sm sm:text-base px-7 py-3.5 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
                   >
                     <span>{slide.cta}</span>
                     <ArrowRight className="w-5 h-5" />
                   </button>
 
-                  <div className="inline-flex items-center gap-2 text-amber-200 font-medium text-sm bg-black/40 px-4 py-3 rounded-full border border-white/10 backdrop-blur-sm">
+                  <div className="inline-flex items-center gap-2 text-[#F2E6DE] font-medium text-sm bg-black/40 px-4 py-3 rounded-full border border-white/10 backdrop-blur-sm">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
                     <span>{slide.priceTag}</span>
                   </div>
@@ -118,22 +120,22 @@ export default function HeroSlider() {
       </Swiper>
 
       {/* Feature Highlight Strip below Slider */}
-      <div className="bg-[#4A101D] border-t border-[#D4AF37]/30 py-4 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-stone-200 text-xs sm:text-sm text-center">
-          <div className="flex items-center justify-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-[#D4AF37]" />
+      <div className="bg-[#4A101D] border-t border-[#D4A96A]/30 py-4 px-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-[#F2E6DE] text-xs sm:text-sm text-center">
+          <div className="flex items-center justify-center gap-2.5">
+            <img src="/images/Emblem.png" alt="Emblem" className="w-5 h-5 rounded-full object-contain bg-white/20 p-0.5 border border-[#D4A96A]" />
             <span>100% Quality Fabric Guaranteed</span>
           </div>
           <div className="flex items-center justify-center gap-2">
-            <HeartHandshake className="w-4 h-4 text-[#D4AF37]" />
+            <HeartHandshake className="w-4 h-4 text-[#D4A96A]" />
             <span>Budget-Friendly Pricing</span>
           </div>
           <div className="flex items-center justify-center gap-2">
-            <Sparkles className="w-4 h-4 text-[#D4AF37]" />
+            <img src="/images/Flower.png" alt="Flower motif" className="w-4 h-4 object-contain inline-block" />
             <span>Sizes M to 2XL Available</span>
           </div>
           <div className="flex items-center justify-center gap-2">
-            <ArrowRight className="w-4 h-4 text-[#D4AF37]" />
+            <ArrowRight className="w-4 h-4 text-[#D4A96A]" />
             <span>Quick WhatsApp Inquiry</span>
           </div>
         </div>

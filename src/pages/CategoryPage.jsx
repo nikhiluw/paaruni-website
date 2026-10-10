@@ -90,8 +90,9 @@ export default function CategoryPage() {
             </Link>
 
             <div className="max-w-3xl">
-              <span className="text-[#D4AF37] font-semibold text-xs uppercase tracking-widest block mb-2">
-                Paaruni Catalogue &bull; {category?.count || sortedProducts.length} Designs Found
+              <span className="text-[#D4A96A] font-semibold text-xs uppercase tracking-widest flex items-center gap-2 mb-2">
+                <img src="/images/Flower.png" alt="Flower motif" className="w-3.5 h-3.5 object-contain" />
+                <span>Paaruni Catalogue &bull; {category?.count || sortedProducts.length} Designs Found</span>
               </span>
               <h1 className="font-serif text-3xl sm:text-5xl font-extrabold text-white mb-4">
                 {category ? category.name : 'Category Collection'}
@@ -111,10 +112,10 @@ export default function CategoryPage() {
             {/* Filter By Size */}
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-xs font-bold text-stone-500 uppercase tracking-wider flex items-center gap-1.5 mr-2">
-                <Filter className="w-3.5 h-3.5 text-[#6B1D2F]" />
+                <Filter className="w-3.5 h-3.5 text-[#4A101D]" />
                 Filter Size:
               </span>
-              {['ALL', 'S', 'M', 'L', 'XL', 'XXL', '3XL'].map((sz) => (
+              {['ALL', 'M', 'L', 'XL', 'XXL'].map((sz) => (
                 <button
                   key={sz}
                   onClick={() => setSelectedSizeFilter(sz)}

@@ -11,6 +11,13 @@
   --color-maroon-light: #9E1B32;
   --color-cream-bg: #FAF6EE;
   --color-gold-accent: #D4AF37;
+
+  /* Official Paaruni Brand Identity Tokens */
+  --color-taupe: #B89A8C;
+  --color-ivory: #F2E6DE;
+  --color-gold: #D4A96A;
+  --color-flower-outline: #E6C28B;
+  --color-flower-fill: #F5EDE6;
 }
 
 @layer base {

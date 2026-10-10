@@ -42,10 +42,14 @@ export default function CategoryGrid() {
             <Layers className="w-3.5 h-3.5 text-[#D4AF37]" />
             <span>Explore Collections</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#4A101D] mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#4A101D] mb-3">
             Shop By Category
           </h2>
-          <div className="w-24 h-1 bg-[#D4AF37] mx-auto rounded-full mb-6" />
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="w-14 h-[1px] bg-[#D4A96A]/60" />
+            <img src="/images/Flower.png" alt="Flower motif" className="w-6 h-6 object-contain" />
+            <div className="w-14 h-[1px] bg-[#D4A96A]/60" />
+          </div>
           <p className="text-stone-600 text-base sm:text-lg font-light leading-relaxed">
             From daily short kurtis to lavish 3-piece festive suit sets, select a category below to explore our budget-friendly designs.
           </p>
