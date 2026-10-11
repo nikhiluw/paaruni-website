@@ -30,24 +30,23 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-stone-700/60">
           {/* Brand Info */}
           <div className="lg:col-span-4 space-y-4 text-left">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#800020] flex items-center justify-center text-[#D4AF37] font-serif text-xl font-bold border border-[#D4AF37]/40 shadow-inner">
-                P
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif text-2xl font-extrabold tracking-wider text-white leading-none">
-                  PAARUNI
-                </span>
-                <span className="text-[11px] font-serif italic text-[#D4AF37] tracking-wider mt-1">
-                  Where elegance blooms
-                </span>
-              </div>
+            <div className="flex items-center gap-3.5">
+              <img
+                src="/images/Emblem.png"
+                alt="Paaruni Royal Emblem"
+                className="w-12 h-12 object-contain rounded-full bg-white/10 p-0.5 border border-[#D4A96A]/60 shadow-md shrink-0"
+              />
+              <img
+                src="/images/Logo3_web.png"
+                alt="Paaruni - Where Elegance Blooms"
+                className="h-12 w-auto object-contain drop-shadow"
+              />
             </div>
             <p className="text-stone-300 text-sm font-light leading-relaxed max-w-sm">
-              <em className="text-[#F3DF8A] not-italic font-serif italic">Where elegance blooms.</em> Paaruni is your destination for budget-friendly women's ethnic wear—from daily casual kurtis to festive 3-piece ensembles.
+              <em className="text-[#F2E6DE] not-italic font-serif italic">Where elegance blooms.</em> Paaruni is your destination for budget-friendly women's ethnic wear—from daily casual kurtis to festive 3-piece ensembles.
             </p>
-            <div className="inline-flex items-center gap-2 text-[#D4AF37] text-xs font-semibold bg-[#800020] px-3.5 py-1.5 rounded-full border border-[#D4AF37]/30">
-              <ShieldCheck className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 text-[#D4A96A] text-xs font-semibold bg-[#4A101D] px-3.5 py-1.5 rounded-full border border-[#D4A96A]/30">
+              <img src="/images/Flower.png" alt="Flower" className="w-3.5 h-3.5 object-contain" />
               <span>Direct WhatsApp Catalogue &bull; No Hidden Fees</span>
             </div>
           </div>
