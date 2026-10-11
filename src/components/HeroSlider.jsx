@@ -21,7 +21,7 @@ export default function HeroSlider() {
       badge: "Pure Cotton Comfort",
       title: "Graceful Everyday & Work Wear",
       subtitle: "Breathable Jaipur cottons, rich Chanderi weaves, and daily short kurtis that blend style with comfort.",
-      priceTag: "Complete Suits under ₹1299",
+      priceTag: "Complete Suits under ₹1999",
       cta: "View Products",
     },
     {
@@ -74,7 +74,7 @@ export default function HeroSlider() {
             </div>
 
             {/* Overlay Content */}
-            <div className="relative z-10 max-w-7xl mx-auto h-full px-6 sm:px-12 lg:px-16 flex flex-col justify-center text-left">
+            <div className="relative z-10 max-w-7xl mx-auto h-full px-6 sm:px-14 lg:px-20 flex flex-col justify-center text-left">
               <div className="max-w-2xl space-y-4 sm:space-y-6">
                 {/* Brand Tagline & Badge */}
                 <div className="flex flex-wrap items-center gap-2.5">
