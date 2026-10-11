@@ -48,7 +48,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top Banner Bar */}
-      <div className="bg-[#B89A8C] text-[#F2E6DE] text-xs font-medium tracking-widest py-2 px-4 text-center border-b border-[#D4A96A]/40 flex items-center justify-center gap-2 sm:gap-3">
+      <div className="bg-[#3B0E17] text-[#F2E6DE] text-xs font-semibold tracking-widest py-2 px-4 text-center border-b border-[#D4A96A]/30 flex items-center justify-center gap-2 sm:gap-3">
         <img src="/images/Flower.png" alt="Flower motif" className="w-3.5 h-3.5 object-contain inline-block" />
         <span>BUDGET-FRIENDLY WOMEN'S ETHNIC WEAR &bull; WHERE ELEGANCE BLOOMS</span>
         <img src="/images/Flower.png" alt="Flower motif" className="w-3.5 h-3.5 object-contain inline-block" />
@@ -58,39 +58,25 @@ export default function Navbar() {
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#FAF6EE]/95 backdrop-blur-md shadow-lg border-b border-[#D4A96A]/30 py-3'
-            : 'bg-[#FAF6EE] py-4 border-b border-stone-200'
+            ? 'bg-[#B89A8C]/95 backdrop-blur-md shadow-lg border-b border-[#D4A96A]/40 py-2.5'
+            : 'bg-[#B89A8C] py-3.5 border-b border-[#A68677]'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Brand Logo with Authentic Emblem */}
+          {/* Brand Logo Image with Tagline */}
           <Link
             to="/"
             onClick={() => handleNavClick('home')}
-            className="flex items-center gap-3 group focus:outline-none"
+            className="flex flex-col items-start group focus:outline-none py-0.5"
           >
-            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full p-0.5 bg-[#B89A8C]/20 border border-[#D4A96A] shadow-sm group-hover:scale-105 transition-transform duration-300 flex items-center justify-center overflow-hidden">
-              <img
-                src="/images/Emblem.png"
-                alt="Paaruni Royal Emblem"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="flex flex-col text-left">
-              <div className="flex items-center gap-1.5">
-                <span className="font-serif text-2xl sm:text-3xl font-extrabold tracking-wider text-[#4A101D] group-hover:text-[#6B1D2F] transition-colors leading-none">
-                  PAARUNI
-                </span>
-                <img
-                  src="/images/Flower.png"
-                  alt="Flower"
-                  className="w-4 h-4 sm:w-5 sm:h-5 object-contain inline-block transform -rotate-12 group-hover:rotate-12 transition-transform duration-300"
-                />
-              </div>
-              <span className="text-[10px] sm:text-[11px] tracking-[0.2em] text-[#D4A96A] font-semibold font-serif italic mt-0.5">
-                Where elegance blooms
-              </span>
-            </div>
+            <img
+              src="/images/Logo3_web.png"
+              alt="Paaruni"
+              className="h-9 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm"
+            />
+            <span className="text-xs sm:text-[13px] tracking-[0.18em] text-[#F2E6DE] font-semibold font-serif italic mt-0.5 pl-0.5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
+              Where elegance blooms
+            </span>
           </Link>
 
           {/* Desktop Nav Links */}
@@ -99,7 +85,7 @@ export default function Navbar() {
               <button
                 key={link.sectionId}
                 onClick={() => handleNavClick(link.sectionId)}
-                className="text-stone-700 hover:text-[#4A101D] font-medium text-sm tracking-wide uppercase transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#D4A96A] hover:after:w-full after:transition-all after:duration-300 cursor-pointer"
+                className="text-[#F2E6DE] hover:text-white font-medium text-sm tracking-wide uppercase transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#D4A96A] hover:after:w-full after:transition-all after:duration-300 cursor-pointer drop-shadow-sm"
               >
                 {link.label}
               </button>
@@ -112,7 +98,7 @@ export default function Navbar() {
               href="https://wa.me/918087169690?text=Hi%20Paaruni!%20I%20would%20like%20to%20enquire%20about%20your%20ethnic%20wear%20collection."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[#4A101D] hover:bg-[#6B1D2F] text-[#F2E6DE] text-xs font-semibold tracking-wider uppercase px-4 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all duration-300 border border-[#D4A96A]/50"
+              className="flex items-center gap-2 bg-[#4A101D] hover:bg-[#6B1D2F] text-[#F2E6DE] text-xs font-semibold tracking-wider uppercase px-4 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all duration-300 border border-[#D4A96A]/60"
             >
               <PhoneCall className="w-3.5 h-3.5 text-[#D4A96A]" />
               <span>WhatsApp Inquiry</span>
@@ -123,7 +109,7 @@ export default function Navbar() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Navigation Menu"
-            className="md:hidden p-2 rounded-lg text-[#4A101D] hover:bg-stone-100 transition-colors cursor-pointer"
+            className="md:hidden p-2 rounded-lg text-[#F2E6DE] hover:bg-black/10 transition-colors cursor-pointer"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
