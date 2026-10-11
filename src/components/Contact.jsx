@@ -91,7 +91,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-serif font-bold text-stone-900 text-lg">Customer Care</h4>
-                  <p className="text-stone-600 text-sm mt-1">+91 80871 69690 / +91 91XXXXXXXXXX</p>
+                  <p className="text-stone-600 text-sm mt-1">+91 80871 69690</p>
                   <p className="text-stone-400 text-xs mt-0.5">Available 10:00 AM – 8:00 PM IST</p>
                 </div>
               </div>
@@ -112,8 +112,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-serif font-bold text-stone-900 text-lg">Working Hours</h4>
-                  <p className="text-stone-600 text-sm mt-1">Monday – Saturday: 10:00 AM to 8:30 PM</p>
-                  <p className="text-stone-500 text-xs mt-0.5">Sunday: 11:00 AM to 6:00 PM</p>
+                  <p className="text-stone-600 text-sm mt-1">Monday – Friday: 10:00 AM to 8:30 PM</p>
+                  <p className="text-stone-500 text-xs mt-0.5">Saturday - Sunday: 10:00 AM to 6:00 PM</p>
                 </div>
               </div>
             </div>

@@ -56,11 +56,10 @@ export default function Navbar() {
 
       {/* Main Sticky Navbar */}
       <header
-        className={`sticky top-0 z-40 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-[#B89A8C]/95 backdrop-blur-md shadow-lg border-b border-[#D4A96A]/40 py-2.5'
-            : 'bg-[#B89A8C] py-3.5 border-b border-[#A68677]'
-        }`}
+        className={`sticky top-0 z-40 transition-all duration-300 ${isScrolled
+          ? 'bg-[#af6767]/95 backdrop-blur-md shadow-lg border-b border-[#D4A96A]/40 py-2.5'
+          : 'bg-[#af6767] py-3.5 border-b border-[#A68677]'
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Brand Logo Image with Tagline */}
@@ -119,7 +118,7 @@ export default function Navbar() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-[#FAF6EE] border-b border-[#D4A96A]/30 shadow-xl px-4 pt-3 pb-6 animate-fade-in">
             {/* Mobile Brand Card */}
-            <div className="bg-[#B89A8C] p-3 rounded-2xl flex items-center justify-center border border-[#D4A96A]/40 mb-3 shadow-sm">
+            <div className="bg-[#af6767] p-3 rounded-2xl flex items-center justify-center border border-[#D4A96A]/40 mb-3 shadow-sm">
               <img
                 src="/images/Logo3_web.png"
                 alt="Paaruni Logo"

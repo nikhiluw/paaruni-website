@@ -7,7 +7,7 @@ export default function About() {
     {
       icon: Tag,
       title: "Budget-Friendly Pricing",
-      desc: "High fashion doesn't have to break the bank. Premium Indian ethnic wear priced honestly from ₹399 to ₹1299."
+      desc: "High fashion doesn't have to break the bank. Premium Indian ethnic wear priced honestly from ₹399 to ₹1999."
     },
     {
       icon: Sparkles,

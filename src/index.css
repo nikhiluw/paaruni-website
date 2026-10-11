@@ -27,7 +27,11 @@
     color: #2D2A26;
   }
 
-  h1, h2, h3, h4, .font-serif-ethnic {
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-serif-ethnic {
     font-family: 'Playfair Display', Georgia, serif;
   }
 }
@@ -42,54 +46,73 @@
 }
 
 .swiper-pagination-bullet-active {
-  background: #D4AF37 !important;
+  background: #D4A96A !important;
   opacity: 1;
   width: 28px !important;
   border-radius: 9999px !important;
 }
 
+/* Swiper navigation buttons - Hidden on mobile screens (<768px) to prevent overlaying text */
 .swiper-button-next,
 .swiper-button-prev {
-  color: #D4AF37 !important;
-  background: rgba(128, 0, 32, 0.8);
-  width: 44px !important;
-  height: 44px !important;
-  border-radius: 50%;
-  backdrop-filter: blur(4px);
-  transition: all 0.3s ease;
+  display: none !important;
 }
 
-.swiper-button-next:after,
-.swiper-button-prev:after {
-  font-size: 18px !important;
-  font-weight: bold;
-}
+@media (min-width: 768px) {
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background: rgba(128, 0, 32, 0.95);
-  transform: scale(1.08);
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: flex !important;
+    color: #D4A96A !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 18px !important;
+    font-weight: bold;
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background: rgba(128, 0, 32, 0.95);
+    transform: scale(1.08);
+  }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #FAF6EE;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #800020;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #4A101D;
 }
 
 /* Keyframe animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {
