@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /
+
+# Don't touch the Supabase proxy
+RewriteRule ^supa/ - [L]
+
+# Send everything that isn't a real file or folder to the React app
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
