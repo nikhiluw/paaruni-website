@@ -1,28 +1,63 @@
 // src/components/CategoryGrid.jsx
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getCategories } from '../services/productService';
+import { getCategories, getFeaturedProducts } from '../services/productService';
 import { ArrowRight, Sparkles, Layers } from 'lucide-react';
 
 export default function CategoryGrid() {
   const [categories, setCategories] = useState([]);
+  const [featuredByCategory, setFeaturedByCategory] = useState({});
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
+  // useEffect(() => {
+  //   let isMounted = true;
+  //   getCategories()
+  //     .then((data) => {
+  //       if (isMounted) {
+  //         setCategories(data);
+  //         setLoading(false);
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.error('Failed to load categories:', err);
+  //       if (isMounted) setLoading(false);
+  //     });
+
+  //   return () => {
+  //     isMounted = false;
+  //   };
+  // }, []);
+
   useEffect(() => {
     let isMounted = true;
-    getCategories()
-      .then((data) => {
-        if (isMounted) {
-          setCategories(data);
-          setLoading(false);
-        }
-      })
-      .catch((err) => {
-        console.error('Failed to load categories:', err);
-        if (isMounted) setLoading(false);
-      });
 
+    async function load() {
+      try {
+        const [cats, featured] = await Promise.all([
+          getCategories(),
+          getFeaturedProducts(),
+        ]);
+
+        // featured list is newest first, so keep the first one found per category
+        const map = {};
+        for (const p of featured) {
+          const key = p.categoryId ?? p.category_id;
+          if (key && !map[key]) map[key] = p;
+        }
+
+        if (isMounted) {
+          setCategories(cats);
+          setFeaturedByCategory(map);
+        }
+      } catch (err) {
+        console.error('Failed to load categories:', err);
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    }
+
+    load();
     return () => {
       isMounted = false;
     };
@@ -77,11 +112,21 @@ export default function CategoryGrid() {
                 {/* Background Image with Hover Zoom */}
                 <div className="absolute inset-0 w-full h-full overflow-hidden">
                   <img
+                    src={
+                      featuredByCategory[cat.id]?.images?.[0] ||
+                      featuredByCategory[cat.id]?.image ||
+                      cat.coverImage
+                    }
+                    alt={featuredByCategory[cat.id]?.name || cat.name}
+                    loading="lazy"
+                    className="w-full h-full object-cover object-top transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                  />
+                  {/* <img
                     src={cat.coverImage}
                     alt={cat.name}
                     loading="lazy"
                     className="w-full h-full object-cover object-top transform group-hover:scale-110 transition-transform duration-700 ease-out"
-                  />
+                  /> */}
                   {/* Subtle Gradient Overlays */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90 group-hover:opacity-95 transition-opacity" />
                   <div className="absolute inset-0 bg-[#6B1D2F]/20 group-hover:bg-[#6B1D2F]/30 transition-colors duration-500" />
@@ -106,7 +151,7 @@ export default function CategoryGrid() {
                     {cat.name}
                   </h3>
                   <p className="text-stone-300 text-xs sm:text-sm line-clamp-2 mb-4 font-light leading-relaxed">
-                    {cat.description}
+                    {featuredByCategory[cat.id]?.name || cat.description}
                   </p>
 
                   <div className="inline-flex items-center gap-2 text-white group-hover:text-[#D4AF37] font-semibold text-sm transition-colors">
