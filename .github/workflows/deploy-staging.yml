@@ -1,0 +1,33 @@
+name: Deploy to Staging (manual)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20          # use the same version as your existing workflow
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
+
+      - name: Deploy to staging via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5   # use whatever action your existing workflow uses
+        with:
+          server: ${{ secrets.FTP_SERVER }}           # same secret names as your existing workflow
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: ./        # CHANGE: your staging folder, with trailing slash
