@@ -21,6 +21,7 @@ const emptyCategory = {
   coverImage: '',
   featured: true,
   sortOrder: 0,
+  usesPieces: true,
 };
 
 export default function AdminCategories() {
@@ -58,6 +59,7 @@ export default function AdminCategories() {
       coverImage: cat.coverImage || cat.cover_image || '',
       featured: cat.featured,
       sortOrder: cat.sort_order || 0,
+      usesPieces: cat.usesPieces !== false,
     });
     setIsNew(false);
     setError('');
@@ -287,6 +289,20 @@ export default function AdminCategories() {
                   />
                 </div>
 
+                <label style={{
+                  display: 'flex', alignItems: 'center', gap: '8px',
+                  color: '#F2E6DE', cursor: 'pointer', fontSize: '0.85rem',
+                  marginBottom: '16px',
+                }}>
+                  <input
+                    type="checkbox"
+                    checked={form.usesPieces}
+                    onChange={(e) => setForm((p) => ({ ...p, usesPieces: e.target.checked }))}
+                    style={{ accentColor: '#D4A96A', width: '18px', height: '18px' }}
+                  />
+                  Products here are sold as 1 / 2 / 3 piece sets
+                </label>
+
                 <div style={{ display: 'flex', gap: '8px', justifyContent: 'flex-end' }}>
                   <button onClick={cancelEdit} style={{
                     padding: '8px 16px', borderRadius: '8px', background: 'transparent',
@@ -398,6 +414,20 @@ export default function AdminCategories() {
                       style={inputStyle}
                     />
                   </div>
+
+                  <label style={{
+                    display: 'flex', alignItems: 'center', gap: '8px',
+                    color: '#F2E6DE', cursor: 'pointer', fontSize: '0.85rem',
+                    marginBottom: '16px',
+                  }}>
+                    <input
+                      type="checkbox"
+                      checked={form.usesPieces}
+                      onChange={(e) => setForm((p) => ({ ...p, usesPieces: e.target.checked }))}
+                      style={{ accentColor: '#D4A96A', width: '18px', height: '18px' }}
+                    />
+                    Products here are sold as 1 / 2 / 3 piece sets
+                  </label>
 
                   <div style={{ display: 'flex', gap: '8px', justifyContent: 'flex-end' }}>
                     <button onClick={cancelEdit} style={{

@@ -16,6 +16,8 @@ import { Save, ArrowLeft, Plus, X } from 'lucide-react';
 
 const AVAILABLE_SIZES = ['S', 'M', 'L', 'XL', 'XXL', '3XL'];
 
+
+
 const emptyProduct = {
   id: '',
   name: '',
@@ -43,6 +45,7 @@ export default function AdminProductForm() {
   const [loading, setLoading] = useState(isEditing);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
+  const [showPieces, setShowPieces] = useState(false);
 
   // Color picker temp state
   const [newColorName, setNewColorName] = useState('');
@@ -56,6 +59,9 @@ export default function AdminProductForm() {
   const loadCategories = async () => {
     const cats = await getAllCategoriesAdmin();
     setCategories(cats);
+    const selectedCategory = cats.find((c) => c.id === form.categoryId);
+    setShowPieces(selectedCategory ? selectedCategory.usesPieces !== false : true);
+
   };
 
   const loadProduct = async () => {
@@ -79,6 +85,11 @@ export default function AdminProductForm() {
 
   const handleChange = (field, value) => {
     setForm((prev) => ({ ...prev, [field]: value }));
+
+    if (field === 'categoryId') {
+      const selectedCategory = categories.find((category) => category.id === value);
+      setShowPieces(selectedCategory ? selectedCategory.usesPieces !== false : true);
+    }
   };
 
   const toggleSize = (size) => {
@@ -113,11 +124,21 @@ export default function AdminProductForm() {
     setSaving(true);
 
     try {
+      const price = parseInt(form.price, 10);
+      let mrp = parseInt(form.mrp, 10);
+
+      if (!Number.isNaN(mrp) && mrp < price) {
+        setError('MRP cannot be lower than the sale price');
+        setSaving(false);
+        return;
+      }
+      if (Number.isNaN(mrp)) mrp = price;   // no MRP entered, so no discount
+
       const payload = {
         ...form,
-        price: parseInt(form.price, 10),
-        mrp: parseInt(form.mrp, 10),
-        pieces: parseInt(form.pieces, 10),
+        price,
+        mrp,
+        pieces: showPieces ? parseInt(form.pieces, 10) : null,
       };
 
       if (isEditing) {
@@ -257,19 +278,21 @@ export default function AdminProductForm() {
                 </select>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '16px' }}>
-                <div>
-                  <label style={labelStyle}>Pieces</label>
-                  <select
-                    value={form.pieces}
-                    onChange={(e) => handleChange('pieces', e.target.value)}
-                    style={{ ...inputStyle, cursor: 'pointer' }}
-                  >
-                    <option value={1}>1 Piece</option>
-                    <option value={2}>2 Piece</option>
-                    <option value={3}>3 Piece</option>
-                  </select>
-                </div>
+              <div style={{ display: 'grid', gridTemplateColumns: showPieces ? '1fr 1fr' : '1fr', gap: '12px', marginBottom: '16px' }}>
+                {showPieces && (
+                  <div>
+                    <label style={labelStyle}>Pieces</label>
+                    <select
+                      value={form.pieces}
+                      onChange={(e) => handleChange('pieces', e.target.value)}
+                      style={{ ...inputStyle, cursor: 'pointer' }}
+                    >
+                      <option value={1}>1 Piece</option>
+                      <option value={2}>2 Piece</option>
+                      <option value={3}>3 Piece</option>
+                    </select>
+                  </div>
+                )}
                 <div>
                   <label style={labelStyle}>Length</label>
                   <select

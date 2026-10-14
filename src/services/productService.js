@@ -4,10 +4,14 @@
 
 import { supabase, SUPABASE_URL } from '../lib/supabase';
 
+const PUBLIC_MARKER = '/storage/v1/object/public/';
 
-const fixUrl = (u) =>
-  typeof u === 'string' ? u.replace(/^https:\/\/[^/]+\.supabase\.co/, SUPABASE_URL) : u
-
+const fixUrl = (u) => {
+  if (typeof u !== 'string') return u;
+  const i = u.indexOf(PUBLIC_MARKER);
+  if (i === -1) return u;            // an external image, leave as is
+  return SUPABASE_URL + u.slice(i);  // rebuild with the current site's address
+};
 
 // ─── PUBLIC QUERIES (used by storefront) ────────────────────
 
@@ -34,13 +38,13 @@ export async function getCategories() {
 
   if (prodError) {
     console.error('Error fetching product counts:', prodError);
-    return cats.map((c) => ({ ...c, count: 0 }));
+    return cats.map((c) => ({ ...c, coverImage: fixUrl(c.cover_image), usesPieces: c.uses_pieces ?? true, count: 0 }));
   }
 
   return cats.map((cat) => ({
     ...cat,
-    // Map snake_case DB field to camelCase for existing component compatibility
-    coverImage: cat.cover_image,
+    coverImage: fixUrl(cat.cover_image),
+    usesPieces: cat.uses_pieces ?? true,
     count: products.filter((p) => p.category_id === cat.id).length,
   }));
 }
@@ -68,7 +72,12 @@ export async function getCategoryById(categoryId) {
     .eq('category_id', categoryId)
     .eq('active', true);
 
-  return { ...data, coverImage: data.cover_image, count: count || 0 };
+  return {
+    ...data,
+    coverImage: fixUrl(data.cover_image),
+    usesPieces: data.uses_pieces ?? true,
+    count: count || 0,
+  };
 }
 
 /**
@@ -186,7 +195,11 @@ export async function getAllCategoriesAdmin() {
     return [];
   }
 
-  return data.map((c) => ({ ...c, coverImage: c.cover_image }));
+  return data.map((c) => ({
+    ...c,
+    coverImage: fixUrl(c.cover_image),
+    usesPieces: c.uses_pieces ?? true,
+  }));
 }
 
 /**
@@ -271,7 +284,8 @@ export async function createCategory(categoryData) {
     .single();
 
   if (error) throw error;
-  return { ...data, coverImage: data.cover_image };
+  if (category.usesPieces !== undefined) payload.uses_pieces = category.usesPieces;
+  return { ...data, coverImage: fixUrl(data.cover_image), usesPieces: data.uses_pieces ?? true };
 }
 
 /**
@@ -290,7 +304,7 @@ export async function updateCategory(id, categoryData) {
     .single();
 
   if (error) throw error;
-  return { ...data, coverImage: data.cover_image };
+  return { ...data, coverImage: fixUrl(data.cover_image), usesPieces: data.uses_pieces ?? true };
 }
 
 /**
